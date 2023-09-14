@@ -1,0 +1,21 @@
+name: Trigger by http req test
+on:
+  repository_dispatch:
+    types: [model_1_training_done]
+  # push: # Trigger on code push
+  #   branches:
+  #     - feature/argocd
+
+jobs:
+  setup:
+    name: Deploy training
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          ref: feature/argocd
+
+      - name: Print somthething
+        run: echo "123"
