@@ -1,0 +1,7 @@
+curl --request POST \
+  --url 'https://api.github.com/repos/IshanFernandoClouda/gh-action-trigger-by-http-req-test/dispatches' \
+  --header 'authorization: Bearer <TOKEN_HERE>' \
+  --data '{"event_type": "model_1_training_done"}'
+
+
+token should have workflow access
